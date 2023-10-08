@@ -1,4 +1,4 @@
-# Informe Principal del Proyecto de Ciencia de Datos
+# Informe Principal | Proyecto de Práctica Profesioanlizante I
 
 ## Introducción
 
