@@ -40,7 +40,7 @@ El proyecto utiliza un enfoque de ciencia de datos para analizar los datos. Las 
 
 ## Cronograma
 
-El proyecto se encuentra actualmente en la etapa de adquisición de datos. Las próximas etapas incluirán el preprocesamiento de datos, el análisis exploratorio de datos y el desarrollo del modelo de predicción.
+La primera fase fue la adquisición de datos, el proyecto se encuentra actualmente en la etapa de preprocesamiento de datos y el análisis exploratorio de los mismos. Las próximas etapas incluirán el desarrollo del modelo de predicción y evaluaación de resultados.
 
 ## Conclución
 
