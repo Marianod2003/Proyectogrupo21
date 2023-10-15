@@ -1,6 +1,6 @@
 # Proyecto de Análisis de Estimaciones Agrícolas en Argentina
 
-Este proyecto se enfoca en desarrollar un modelo de predicción para estimar la producción futura de cultivos en Argentina. La agricultura es una industria vital en el país, y la toma de decisiones basada en datos es esencial para optimizar la producción, gestionar recursos y enfrentar desafíos como el cambio climático.
+Este es un proyecto desarrollado para la materia Práctica Profesionalizante I, que se enfoca en desarrollar un modelo de predicción para estimar la producción de cultivos en Argentina. La agricultura es una industria vital en el país, y la toma de decisiones basada en datos es esencial para optimizar la producción, gestionar recursos y enfrentar desafíos como el cambio climático.
 
 ## Integrantes del equipo
 
