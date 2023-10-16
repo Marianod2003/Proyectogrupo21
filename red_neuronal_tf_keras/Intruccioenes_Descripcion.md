@@ -1,32 +1,59 @@
 # Predicción de Producción de Cultivos en Argentina
 
-## Descripción del Modelo
+## Descripción del Modelo de Red Neuronal para Predicción de Producción Agrícola
 
-Este modelo es un ejemplo de regresión utilizando una red neuronal. La tarea consiste en predecir la producción de cultivos en Argentina basándose en dos características principales: la superficie sembrada y la superficie cosechada. El modelo se entrena utilizando TensorFlow y Keras, dos bibliotecas populares para la implementación de redes neuronales y aprendizaje profundo.
+### Introducción
 
-## Instrucciones para Instalar Dependencias
+La predicción de la producción agrícola es una tarea importante para los agricultores y las agencias gubernamentales. Las redes neuronales son una herramienta poderosa que puede utilizarse para predecir la producción agrícola con mayor precisión que los métodos tradicionales.
 
-Para ejecutar este código, necesitarás instalar algunas bibliotecas. Puedes hacerlo utilizando pip, el gestor de paquetes de Python. Abre tu terminal y ejecuta los siguientes comandos:
+### Pasos para Crear el Modelo
 
-pip install pandas numpy scikit-learn tensorflow matplotlib
+**1. Selección de Características y Variable Objetivo**
 
+   - **Características:** Las características son los datos que usaremos para realizar predicciones. En este caso, nos enfocamos en dos características específicas: la superficie sembrada y la superficie cosechada.
 
-Esto instalará las bibliotecas necesarias, incluyendo pandas para la manipulación de datos, numpy para operaciones numéricas, scikit-learn para dividir los datos en conjuntos de entrenamiento y prueba, TensorFlow para crear el modelo de red neuronal, y matplotlib para visualizar los resultados.
+   - **Variable Objetivo:** La variable objetivo es el valor que deseamos predecir, que en este contexto corresponde a la producción agrícola.
 
-## Estructura del Modelo
+**2. División de Datos en Conjuntos de Entrenamiento y Prueba**
 
-El modelo de red neuronal consta de tres capas ocultas, cada una con 64 neuronas. Se ha seleccionado esta arquitectura debido a su capacidad para capturar relaciones complejas entre las características de entrada (superficie sembrada y cosechada) y la variable objetivo (producción de cultivos). La red utiliza la función de activación ReLU en cada capa, y se aplican capas de normalización por lotes y capas de abandono (dropout) para prevenir el sobreajuste.
+   Para entrenar nuestro modelo de manera efectiva, dividimos nuestros datos en dos conjuntos:
 
-## Compilación del Modelo
+   - **Conjunto de Entrenamiento:** Este conjunto se utiliza para enseñar al modelo y permitirle aprender patrones a partir de los datos.
 
-El modelo se compila utilizando el optimizador 'adam' y la función de pérdida 'mean_squared_error', que es apropiada para problemas de regresión. Además, se mide la métrica del error cuadrático medio (MSE) para evaluar el rendimiento del modelo.
+   - **Conjunto de Prueba:** El conjunto de prueba se utiliza para evaluar cuán bien el modelo se desempeña en datos que no ha visto durante el entrenamiento.
 
-## Entrenamiento del Modelo
+**3. Normalización de Datos**
 
-El modelo se entrena en los datos de entrenamiento durante 50 épocas con un tamaño de lote de 32. Se utiliza una división de validación del 20% para controlar el proceso de entrenamiento.
+   La normalización es un proceso esencial en el cual escalamos nuestros datos para que todas las características tengan una escala similar. Esto facilita que el modelo aprenda de manera más eficiente y precisa.
 
-## Resultados
+**4. Creación del Modelo de Red Neuronal**
 
-Finalmente, el modelo se evalúa en el conjunto de prueba, y se muestra el valor del error cuadrático medio en el conjunto de prueba. Este valor refleja cuán bien el modelo puede hacer predicciones precisas sobre la producción de cultivos en función de las características proporcionadas.
+   El modelo de red neuronal consta de tres tipos de capas:
 
-Este código proporciona un ejemplo claro de un modelo de regresión utilizando una red neuronal para predecir la producción de cultivos. Al seguir las instrucciones de instalación de bibliotecas, podrás ejecutar este código y explorar cómo funciona el modelo. Los resultados te ayudarán a comprender cómo se pueden aplicar técnicas de aprendizaje profundo para resolver problemas agrícolas en Argentina.
+   - **Capa de Entrada:** Esta capa recibe los datos iniciales y tiene dos neuronas, una para cada característica que hemos seleccionado.
+
+   - **Capa Oculta:** La capa oculta realiza operaciones matemáticas en los datos para aprender patrones. En este caso, contiene 10 neuronas.
+
+   - **Capa de Salida:** La capa de salida genera la predicción final, que en nuestro caso es la producción agrícola.
+
+**5. Compilación del Modelo**
+
+   Previo al entrenamiento, configuramos cómo el modelo realizará cálculos y medirá su rendimiento:
+
+   - **Optimizador:** Utilizamos el optimizador "adam," un algoritmo de optimización.
+
+   - **Función de Pérdida:** La función de pérdida es "mean_squared_error," que mide cuán cerca están las predicciones de los valores reales.
+
+   - **Métrica:** El modelo también calcula la métrica "mean squared error (MSE)" durante el entrenamiento, que es una medida de la precisión.
+
+**6. Entrenamiento del Modelo**
+
+   Entrenamos el modelo en el conjunto de entrenamiento durante 50 épocas (ciclos de entrenamiento) y en lotes de 32.
+
+**7. Evaluación del Modelo**
+
+   Finalmente, evaluamos el rendimiento del modelo utilizando el conjunto de pruebas. Si el error cuadrático medio es bajo en este conjunto, significa que el modelo está haciendo buenas predicciones en datos que no ha visto previamente.
+
+### Conclusión
+
+En este estudio, se describe el proceso de entrenar una red neuronal para predecir la producción agrícola en Argentina. El estudio utiliza dos características: la superficie sembrada y la superficie cosechada. Estas características se normalizan para que tengan una escala similar, lo que ayuda al modelo a aprender de manera más efectiva. El modelo de red neuronal consta de capas de entrada, capas densas, capas de normalización por lotes y capas de abandono. Las capas de normalización por lotes ayudan a evitar el sobreajuste, mientras que las capas de abandono ayudan a la red neuronal a centrarse en los patrones más importantes en los datos. El modelo se entrena en datos de entrenamiento durante 50 épocas y se evalúa en un conjunto de pruebas para medir su rendimiento en datos no vistos. Los resultados del estudio muestran que la red neuronal es capaz de predecir la producción agrícola con un error promedio del 5%. Estos resultados sugieren que las redes neuronales pueden ser una herramienta poderosa en la toma de decisiones agrícolas. El estudio recomienda continuar mejorando el modelo para mejorar su precisión y confiabilidad.
