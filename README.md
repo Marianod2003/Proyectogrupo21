@@ -2,6 +2,8 @@
 
 Este es un proyecto desarrollado para la materia Práctica Profesionalizante I, que se enfoca en desarrollar un modelo de predicción para estimar la producción de cultivos en Argentina. La agricultura es una industria vital en el país, y la toma de decisiones basada en datos es esencial para optimizar la producción, gestionar recursos y enfrentar desafíos como el cambio climático.
 
+![](https://github.com/Marianod2003/Proyectogrupo21/blob/develop/Presentación.png)
+
 ## Integrantes del equipo
 
 El equipo de desarrollo está compuesto por:
