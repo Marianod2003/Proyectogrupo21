@@ -19,7 +19,6 @@ Los objetivos específicos del proyecto son:
 
 Los datos utilizados en el proyecto fueron recopilados por el INDEC y el Ministerio de Agricultura, Ganadería y Pesca de Argentina. Los datos abarcan múltiples campañas agrícolas, desde 1969 hasta el 2020. Los datos fueron revisados ​​para detectar errores y sesgos.
 
-## Modelo de Red Neuronal para Predicción de Producción Agrícola
     
 ## Métodos
 
