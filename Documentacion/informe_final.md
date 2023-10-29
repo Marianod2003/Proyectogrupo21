@@ -1,85 +1,135 @@
-# Proyecto Practica Profesionalizante 1 - 2023 - Grupo 21
+# Proyecto Práctica Profesionalizante 1 - 2023 - Grupo 21
 
 ## Introducción
 
-En la actualidad, la agricultura es una de las industrias más críticas de Argentina y desempeña un papel fundamental en la economía del país. La toma de decisiones basada en datos es esencial para optimizar la producción agrícola, gestionar recursos y responder a desafíos cambiantes, como el cambio climático. En este contexto, este proyecto de ciencia de datos se centra en el análisis de estimaciones agrícolas en Argentina, utilizando un conjunto de datos detallado y diverso.
+La agricultura es una industria vital en Argentina, que representa el 10% del PIB del país. La toma de decisiones basada en datos es esencial para optimizar la producción agrícola y gestionar los recursos de manera eficiente.
+
+Este proyecto tiene como objetivo desarrollar un modelo de predicción para estimar la producción de cultivos en Argentina. El modelo se entrenará con un conjunto de datos que incluye información sobre la superficie sembrada, la superficie cosechada, el rendimiento y la producción de cultivos.
 
 ## Alcance
 
-El alcance de este proyecto abarca:
+Los objetivos específicos del proyecto son:
 
-- **Exploración de Datos:** Realizaremos un análisis exploratorio de datos para comprender la distribución de cultivos en diferentes provincias y departamentos, así como las tendencias históricas.
+- **Exploración de datos**: Comprender la distribución de cultivos en diferentes provincias y departamentos, así como las tendencias históricas.
+- **Análisis de producción**: Investigar la producción agrícola a lo largo de diferentes campañas agrícolas y evaluar la variación de la producción en función de los cultivos.
+- **Rendimiento de cultivos**: Analizar el rendimiento de cultivos específicos y evaluar los factores que pueden influir en él.
+- **Predicción de producción**: Desarrollar un modelo de regresión para estimar la producción futura de cultivos en función de datos históricos.
 
-- **Análisis de Producción:** Investigaremos la producción agrícola a lo largo de diferentes campañas agrícolas y evaluaremos la variación de la producción en función de los cultivos.
+## Datos
 
-- **Rendimiento de Cultivos:** Analizaremos el rendimiento de cultivos específicos y evaluaremos los factores que pueden influir en él.
+Los datos utilizados en el proyecto fueron recopilados por el INDEC y el Ministerio de Agricultura, Ganadería y Pesca de Argentina. Los datos abarcan múltiples campañas agrícolas, desde 1969 hasta el 2020. Los datos fueron revisados ​​para detectar errores y sesgos.
 
-- **Predicción de Producción:** Desarrollaremos un modelo de aprendizaje automático que permita predecir la producción futura de cultivos en función de datos históricos.
+    
+## Métodos
 
-Las limitaciones de este proyecto incluyen la disponibilidad de datos históricos y la complejidad de los factores que afectan la producción agrícola.
+El proyecto utiliza un enfoque de ciencia de datos para analizar los datos. Las principales técnicas incluyen:
 
-## Objetivos
+1. **Análisis exploratorio de datos**: Para comprender la distribución de los datos y identificar tendencias.
+2. **Modelado de aprendizaje automático**: Para desarrollar un modelo de predicción.
 
-Los objetivos específicos de este proyecto son:
+## Modelo de Red Neuronal para Predicción de Producción Agrícola
 
-1. **Identificar patrones y tendencias** en la producción agrícola en Argentina.
-2. **Evaluar el rendimiento** de cultivos clave en diferentes regiones geográficas.
-3. **Determinar los factores** que influyen en la producción agrícola, como la superficie sembrada y cosechada.
-4. **Desarrollar un modelo de aprendizaje automático** que permita predecir la producción futura de cultivos.
+El objetivo del proyecto es desarrollar un modelo que pueda predecir la producción agrícola con mayor precisión que los métodos tradicionales.
 
-## Problemática
+### Pasos para Crear el Modelo
 
-El proyecto aborda varias problemáticas importantes, entre ellas:
+**1. Selección de características y variable objetivo**
 
-- La necesidad de una mejor comprensión de la producción agrícola para tomar decisiones informadas en la planificación y distribución de recursos agrícolas.
-- La importancia de **identificar patrones de producción** y factores que afectan el rendimiento para mejorar la eficiencia agrícola y la gestión de riesgos.
-- La falta de información actualizada y análisis sistemáticos en el campo de la agricultura en Argentina.
+Las características seleccionadas son la superficie sembrada y la superficie cosechada. La variable objetivo es la producción agrícola.
 
-## Metodología
+**2. División de datos en conjuntos de entrenamiento y prueba**
 
-La metodología de este proyecto se divide en las siguientes etapas:
+Para entrenar el modelo de manera efectiva, dividimos los datos en dos conjuntos:
 
-1. **Adquisición de Datos:** Se obtendrán los datos de estimaciones agrícolas en Argentina de fuentes confiables.
+- **Conjunto de entrenamiento:** Utilizado para enseñar al modelo y permitirle aprender patrones a partir de los datos.
+- **Conjunto de prueba:** Empleado para evaluar el desempeño del modelo en datos no vistos durante el entrenamiento.
 
-2. **Preprocesamiento de Datos:** Los datos se limpiarán y transformarán para eliminar valores atípicos y asegurar la coherencia de los datos.
+**3. Normalización de datos**
 
-3. **Exploración de Datos:** Se realizará un análisis exploratorio de datos para visualizar la distribución de cultivos, tendencias y correlaciones.
+La normalización es un proceso esencial que escala los datos para que todas las características tengan una escala similar, facilitando que el modelo aprenda de manera eficiente y precisa.
 
-4. **Modelado de Aprendizaje Automático:** Se desarrollará un modelo de regresión para predecir la producción futura de cultivos en función de datos históricos.
+**4. Creación del Modelo de Red Neuronal**
 
-5. **Evaluación y Visualización:** Se evaluará el rendimiento del modelo y se presentarán los resultados a través de visualizaciones efectivas.
+El modelo consta de tres tipos de capas:
 
-## Resumen
+- **Capa de entrada:** Con dos neuronas, una para cada característica seleccionada.
+- **Capa oculta:** Realiza operaciones matemáticas para aprender patrones, con 10 neuronas en este caso.
+- **Capa de salida:** Genera la predicción final, que es la producción agrícola.
 
-Hasta el momento, se ha realizado la adquisición y preprocesamiento de datos, así como un análisis exploratorio inicial. Se han identificado patrones interesantes en la distribución de cultivos y tendencias temporales.
+**5. Compilación del Modelo**
+
+Antes del entrenamiento, configuramos cómo el modelo realizará cálculos y medirá su rendimiento:
+
+- **Optimizador:** Utilizamos el optimizador "adam," un algoritmo de optimización.
+- **Función de Pérdida:** La función de pérdida es "mean_squared_error," que mide la proximidad de las predicciones a los valores reales.
+- **Métrica:** El modelo calcula la métrica "mean squared error (MSE)" durante el entrenamiento, una medida de la precisión.
+
+**6. Entrenamiento del Modelo**
+
+Entrenamos el modelo en el conjunto de entrenamiento durante 50 épocas (ciclos de entrenamiento) y en lotes de 32.
+
+**7. Evaluación del Modelo**
+
+Finalmente, evaluamos el rendimiento del modelo utilizando el conjunto de pruebas. Si el error cuadrático medio es bajo en este conjunto, significa que el modelo hace buenas predicciones en datos no vistos.
 
 ## Conclusiones
 
-Este proyecto de ciencia de datos tiene el potencial de proporcionar información valiosa para la toma de decisiones en el sector agrícola argentino. A medida que avance el proyecto, se espera que se logren resultados significativos, incluida una mejor comprensión de los factores que afectan la producción agrícola y un modelo de predicción útil para los actores de la industria agrícola. Además, se destacan las implicaciones prácticas de este proyecto en la planificación agrícola y la gestión de recursos, lo que contribuirá al desarrollo sostenible de la agricultura en Argentina. Las próximas etapas incluirán la implementación del modelo de predicción y la presentación detallada de resultados y conclusiones finales.
+Este proyecto tiene el potencial de proporcionar información valiosa para la toma de decisiones en el sector agrícola argentino. Los resultados se presentarán en un informe final que se publicará en este repositorio.
 
-## Descripción de los Datos
+## Tecnologías utilizadas
 
-El presente informe se basa en un análisis de datos relacionados con la agricultura en Argentina. Los datos incluyen información sobre la superficie sembrada y la producción de cultivos a lo largo del tiempo, con un enfoque particular en la soja. Los datos se recopilaron de fuentes confiables, incluyendo el Ministerio de Agricultura, Ganadería y Pesca de la Nación Argentina y el Instituto Nacional de Estadística y Censos de la República Argentina. Los datos abarcan múltiples campañas agrícolas, desde 1969 hasta la actualidad.
+Este proyecto se desarrolló utilizando las siguientes tecnologías y bibliotecas:
 
-Las variables incluyen:
+- **Python:** Lenguaje de programación principal utilizado para el análisis de datos y la construcción del modelo.
+- **Pandas:** Biblioteca para el análisis y manipulación de datos.
+- **Numpy:** Biblioteca para operaciones numéricas y manipulación de matrices de datos.
+- **Matplotlib:** Biblioteca para la visualización de datos.
+- **Scipy:** Biblioteca para herramientas y algoritmos matemáticos.
+- **Seaborn:** Biblioteca para crear gráficos estadísticos en Python.
+- **Scikit-learn (sklearn):** Biblioteca para el aprendizaje automático.
+- **Tensorflow:** Biblioteca de aprendizaje automático de código abierto desarrollada por Google.
+- **Keras:** Librería de alto nivel para el aprendizaje automático de TensorFlow.
+- **SQL:** Lenguaje de consulta para bases de datos relacionales.
 
-- **Superficie sembrada (ha):** área de tierra dedicada a la siembra de un cultivo en particular.
-- **Producción (t):** cantidad de producto cosechado de un cultivo en particular.
+## Ilustraciones
 
-Para comprender mejor la relación entre la superficie sembrada y la producción de cultivos, calculamos la correlación entre estas dos variables utilizando el coeficiente de correlación de Pearson. Además, generamos gráficos de dispersión y líneas para visualizar la relación entre la superficie sembrada y la producción de cultivos.
+La gráfica siguiente muestra la distribución de cultivos en Argentina.
 
-## Hallazgos Clave
+'Agregar grafico de distribución de cultivos'
 
-Los hallazgos clave de nuestro análisis son los siguientes:
+## Recomendaciones para futuras investigaciones
 
-- La correlación entre la superficie sembrada y la producción de soja es **positiva y significativa**. Esto indica que existe una relación lineal entre ambas variables, es decir, que un aumento en la superficie sembrada suele estar asociado con un aumento en la producción.
-- (en progreso)
-- (en progreso)
-- (en progreso)
+Para futuras investigaciones, se podría explorar el uso de otras características para mejorar el rendimiento del modelo. Por ejemplo, se podría incluir información sobre el clima, el suelo y los precios de los cultivos.
 
-## Conclusiones y Discusión
+También se podría explorar el uso de modelos más complejos, como los modelos de aprendizaje profundo. Los modelos de aprendizaje profundo pueden aprender patrones más complejos que los modelos de red neuronal simples.
 
-(en progreso)
+## Conclusión...
+En proceso
+
+## Consultas SQL - Uso y Utilidad
+
+Este proyecto también incluye el uso de consultas SQL para analizar y acceder a los datos agrícolas. Las consultas SQL son una herramienta esencial para el análisis de datos agrícolas, permitiendo a los usuarios acceder, manipular y analizar datos de manera eficiente.
+
+### Creación de tabla
+
+La primera consulta SQL se encarga de la creación de la tabla "EstimacionesAgricolasArgentina." Esta tabla se utiliza para almacenar los datos agrícolas, y su estructura se adapta a las necesidades del proyecto.
+
+```sql
+CREATE TABLE EstimacionesAgricolasArgentina (
+    ID INT PRIMARY KEY,
+    Provincia VARCHAR(50),
+    Departamento VARCHAR(50),
+    Campaña INT,
+    Cultivo VARCHAR(50),
+    SuperficieSembrada FLOAT,
+    SuperficieCosechada FLOAT,
+    Produccion FLOAT,
+    Rendimiento FLOAT
+);
+
+
+
+
 
 
 **'https://github.com/Marianod2003/Proyectogrupo21'**
