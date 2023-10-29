@@ -80,5 +80,41 @@ La gráfica siguiente muestra la distribución de cultivos en Argentina.
 
 ## Referencias
 
+<<<<<<< HEAD
 - [Repositorio del Proyecto](https://github.com/Marianod2003/Proyectogrupo21)
 - [Tablero del Proyecto](https://github.com/users/Marianod2003/projects/3)
+=======
+También se podría explorar el uso de modelos más complejos, como los modelos de aprendizaje profundo. Los modelos de aprendizaje profundo pueden aprender patrones más complejos que los modelos de red neuronal simples.
+
+## Conclusión...
+En proceso
+
+## Consultas SQL - Uso y Utilidad
+
+Este proyecto también incluye el uso de consultas SQL para analizar y acceder a los datos agrícolas. Las consultas SQL son una herramienta esencial para el análisis de datos agrícolas, permitiendo a los usuarios acceder, manipular y analizar datos de manera eficiente.
+
+### Creación de tabla
+
+La primera consulta SQL se encarga de la creación de la tabla "EstimacionesAgricolasArgentina." Esta tabla se utiliza para almacenar los datos agrícolas, y su estructura se adapta a las necesidades del proyecto.
+
+```sql
+CREATE TABLE EstimacionesAgricolasArgentina (
+    ID INT PRIMARY KEY,
+    Provincia VARCHAR(50),
+    Departamento VARCHAR(50),
+    Campaña INT,
+    Cultivo VARCHAR(50),
+    SuperficieSembrada FLOAT,
+    SuperficieCosechada FLOAT,
+    Produccion FLOAT,
+    Rendimiento FLOAT
+);
+
+
+
+
+
+
+**'https://github.com/Marianod2003/Proyectogrupo21'**
+**'https://github.com/users/Marianod2003/projects/3'**
+>>>>>>> 5a2c9fadf9f1db245a825c1e0fc87e8a4ba89e81
