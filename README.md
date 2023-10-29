@@ -1,4 +1,4 @@
-# Proyecto de Análisis de Estimaciones Agrícolas en Argentina
+# Proyecto de Análisis de Datos Agrícolas en Argentina
 
 Este proyecto se enfoca en desarrollar un modelo de predicción para estimar la producción de cultivos en Argentina, abordando un aspecto vital de la industria agrícola en el país y promoviendo la toma de decisiones basada en datos.
 
