@@ -75,7 +75,23 @@ Selección de características: Se utilizó el método SelectKBest de Scikit-lea
 Evaluación de los modelos con características seleccionadas: Se evaluaron los modelos de regresión creados en el paso 5 utilizando las características seleccionadas en el paso 6.
 Selección del mejor modelo: Se seleccionó el mejor modelo de regresión para la predicción de la producción de cultivos en base a su rendimiento en las métricas evaluadas.
 
-Paralelamente adjuntamos codigos secundarios 
+#### *Paralelamente adjuntamos codigos secundarios*
+Creamos un codigo para mostrar que agregando muchas mas variables importantes en el proceso de estudio se puede mejorar el procedimiento utilizando código de Python para el análisis y predicción del rendimiento de cultivos, centrándose en el cultivo de arroz.
+El código comienza por cargar datos de un archivo CSV utilizando la biblioteca Pandas y se filtran las filas del DataFrame para obtener solo las que contienen el cultivo de arroz.
+Se crea un modelo de regresión lineal utilizando la biblioteca Scikit-Learn y se entrena utilizando los datos de arroz seleccionados.
+Se evalúa el rendimiento del modelo calculando el Error Cuadrático Medio (MSE) y el Coeficiente de Determinación (R^2) utilizando las predicciones del modelo en comparación con los valores reales.
+El código realiza pronósticos para futuros valores de rendimiento del cultivo de arroz utilizando valores ficticios para las columnas "sup_sembrada" y "sup_cosechada".
+El código genera datos ficticios para las nuevas columnas: "temperatura_promedio", "precipitación", "humedad_suelo" y "fertilizantes" y se utilizan estas variables para predecir el rendimiento estimado.
+El código incluye una visualización de las predicciones frente a los valores reales.
+
+Hicimos un código con redes neuronales que describe el proceso de entrenar una red neuronal para predecir la producción agrícola en Argentina.
+El estudio utiliza dos características: la superficie sembrada y la superficie cosechada.
+Estas características se normalizan para que tengan una escala similar, lo que ayuda al modelo a aprender de manera más efectiva.
+El modelo de red neuronal consta de capas de entrada, capas densas, capas de normalización por lotes y capas de abandono.
+El modelo se entrena en datos de entrenamiento durante 50 épocas y se evalúa en un conjunto de pruebas para medir su rendimiento en datos no vistos.
+Los resultados del estudio muestran que la red neuronal es capaz de predecir la producción agrícola con un error promedio del 5%.
+Estos resultados sugieren que las redes neuronales pueden ser una herramienta poderosa en la toma de decisiones agrícolas.
+El estudio recomienda continuar mejorando el modelo para mejorar su precisión y confiabilidad.
 
 ### Resultados
 
