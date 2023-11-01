@@ -2,8 +2,11 @@
 ## Informe Final del Proyecto
 
 ### Resumen Ejecutivo
+La agricultura es una industria vital para la economía argentina, representando el 10% del PIB del país. La toma de decisiones basada en datos es esencial para optimizar la producción agrícola y gestionar los recursos de manera eficiente.
 
-La agricultura es una industria vital en Argentina, que representa el 10% del PIB del país. La toma de decisiones basada en datos es esencial para optimizar la producción agrícola y gestionar los recursos de manera eficiente. Este proyecto desarrolló un modelo de predicción que estima la producción de cultivos en Argentina con un error de aproximadamente el 10%.
+Este proyecto desarrolló un modelo de predicción de la producción agrícola en Argentina basado en aprendizaje automático. El modelo se entrenó en un conjunto de datos de 52 campañas agrícolas, desde 1969 hasta 2020. Los resultados mostraron que el modelo puede estimar la producción de cultivos con un error de aproximadamente el 10%.
+
+Este modelo tiene el potencial de mejorar la eficiencia y la sostenibilidad de la industria agrícola argentina. Al proporcionar estimaciones precisas de la producción, el modelo puede ayudar a los agricultores a tomar mejores decisiones sobre la siembra, la cosecha y la comercialización de sus cultivos.
 
 ### Índice
 
@@ -16,20 +19,13 @@ La agricultura es una industria vital en Argentina, que representa el 10% del PI
 7. [Recomendaciones](#recomendaciones)
 8. [Lecciones Aprendidas](#lecciones-aprendidas)
 9. [Anexos](#anexos)
-10. [Agradecimientos](#agradecimientos)
-11. [Referencias](#referencias)
+10. [Referencias](#referencias)
 
 ## Introducción
+La agricultura es una industria fundamental para la economía argentina, ya que proporciona alimentos, ingresos y empleo a millones de personas. En este contexto, la toma de decisiones basada en datos se convierte en un factor crítico para garantizar la eficiencia y sostenibilidad de esta industria.
 
-La agricultura en Argentina desempeña un papel crucial en la economía del país, proporcionando alimentos y generando ingresos significativos. La toma de decisiones basada en datos es esencial para garantizar la eficiencia y la sostenibilidad de esta industria. El objetivo de este proyecto es desarrollar un modelo que pueda predecir la producción agrícola con mayor precisión que los métodos tradicionales.
-
-### Antecedentes
-
-Los datos utilizados en el proyecto fueron recopilados por el INDEC y el Ministerio de Agricultura, Ganadería y Pesca de Argentina. Los datos abarcan múltiples campañas agrícolas, desde 1969 hasta el 2020. Se incluyen características como la superficie sembrada, la superficie cosechada, el rendimiento y la producción.
-
-#### Datos
-
-Los datos utilizados en el proyecto fueron recopilados por el INDEC y el Ministerio de Agricultura, Ganadería y Pesca de Argentina. Los datos abarcan múltiples campañas agrícolas, desde 1969 hasta el 2020. Se incluyen características como la superficie sembrada, la superficie cosechada, el rendimiento y la producción.
+## Antecedentes
+Los datos utilizados en este proyecto provienen de fuentes confiables, tales como el Instituto Nacional de Estadística y Censos (INDEC) y el Ministerio de Agricultura, Ganadería y Pesca de Argentina. Estos datos abarcan múltiples campañas agrícolas, desde 1969 hasta el año 2020, e incluyen información detallada sobre la superficie sembrada, superficie cosechada, rendimiento y producción de diversos cultivos.
 
 ##### Características del Conjunto de Datos
 
@@ -40,9 +36,50 @@ Los datos utilizados en el proyecto fueron recopilados por el INDEC y el Ministe
 | Rendimiento           | Cantidad de producción de un cultivo por unidad de superficie |
 | Producción            | Cantidad total de producción de un cultivo       |
 
-#### Modelo de Red Neuronal para Predicción de Producción Agrícola
+## Metodología
 
-El objetivo del proyecto es desarrollar un modelo que pueda predecir la producción agrícola con mayor precisión que los métodos tradicionales.
+El proceso se dividió en dos partes: la preparación y el análisis de datos, y la implementación de modelos de aprendizaje automático.
+
+### Parte 1: Preparación y Análisis de Datos
+
+1. **Importación de Librerías Necesarias**: Se importaron librerías de Python esenciales para llevar a cabo tareas de ciencia de datos y análisis de datos, tales como Pandas, NumPy, Matplotlib y Seaborn.
+
+2. **Obtención de los Datos**: Se importaron los datos desde GitHub y se creó el DataFrame `df_agricola` para facilitar el análisis y manipulación de los datos.
+
+3. **Descripción Estadística del DataFrame**: Se utilizó el método `describe()` de Pandas para obtener una descripción estadística del DataFrame, lo cual nos permitió comprender la distribución de los datos y detectar posibles valores atípicos (outliers).
+
+4. **Análisis de los Valores Únicos de la Columna 'cultivo'**: Se generó una lista de los valores únicos presentes en la columna 'cultivo' del DataFrame, lo que proporcionó un panorama completo de los distintos tipos de cultivos en nuestros datos.
+
+5. **Frecuencia de los Cultivos**: Se realizó un conteo y una visualización de la frecuencia de los cultivos, lo que permitió entender la distribución de los mismos en nuestros datos y detectar desbalances.
+
+6. **Cambio de Nombre de Columnas**: Se procedió a renombrar ciertas columnas del DataFrame para hacerlas más manejables y comprensibles.
+
+7. **Verificación de Duplicados**: Se llevó a cabo una verificación para asegurarse de que no existieran filas duplicadas en el DataFrame, garantizando así la integridad y unicidad de los datos.
+
+### Parte 2: Implementación de Modelos de Aprendizaje Automático
+
+En el archivo "machineLearning.ipynb", se describe la aplicación de técnicas de aprendizaje automático para predecir la producción agrícola. Se han desarrollado modelos de predicción para seis cultivos fundamentales: maíz, trigo, sorgo, avena, soja y girasol. A continuación, se detallan los pasos:
+
+1. **Importación de Librerías Necesarias**: Se importaron las librerías de Python requeridas para realizar tareas de ciencia de datos y aprendizaje automático, como Pandas, NumPy, Matplotlib, Seaborn y Scikit-learn.
+
+2. **Análisis de Clustering**: Se utilizó el algoritmo K-Means para agrupar los datos y determinar la cantidad óptima de modelos a entrenar. Se aplicó un análisis univariado y multivariado para identificar outliers y calcular la distancia de Mahalanobis.
+
+3. **Creación de Modelos de Regresión**: Se desarrollaron varios modelos de regresión, incluyendo Naive Bayes, Regresión Lineal, Random Forest Regressor y Máquina de Soporte Vectorial (SVM). Estos modelos se ajustaron y evaluaron utilizando conjuntos de datos de entrenamiento y prueba.
+
+4. **Selección de Características**: Se empleó el método SelectKBest de Scikit-learn para seleccionar las características más relevantes para la predicción de la producción de cultivos.
+
+5. **Evaluación de Modelos con Características Seleccionadas**: Se evaluaron los modelos de regresión utilizando las características seleccionadas, considerando métricas como el Error Cuadrático Medio (MSE) y el Coeficiente de Determinación (R^2).
+
+6. **Selección del Mejor Modelo**: Se seleccionó el modelo de regresión con mejor desempeño basado en las métricas de evaluación.
+
+### Códigos Complementarios
+Además, se desarrollaron códigos secundarios para ampliar el análisis y mejorar la predicción:
+
+#### Código de Predicción de Rendimiento de Arroz
+Se creó un código en Python para analizar y predecir el rendimiento del cultivo de arroz, incorporando variables adicionales como temperatura promedio, precipitación, humedad del suelo y fertilizantes.
+
+#### Modelo de Red Neuronal para Predicción de Producción Agrícola
+Se diseñó un código que describe el proceso de entrenar una red neuronal para predecir la producción agrícola en Argentina. El estudio se centra en las características de superficie sembrada y superficie cosechada.
 
 ##### Pasos para Crear el Modelo
 
@@ -53,45 +90,6 @@ El objetivo del proyecto es desarrollar un modelo que pueda predecir la producci
 5. Compilación del Modelo
 6. Entrenamiento del Modelo
 7. Evaluación del Modelo
-
-#### **Metodología**
-
-Importación de librerías necesarias: Se importaron las librerías de Python necesarias para realizar tareas de ciencia de datos y análisis de datos, como Pandas, NumPy, Matplotlib y Seaborn.
-Obtención de los datos: Se importó el dataset desde GitHub y se creó el DataFrame df_agricola para trabajar con los datos.
-Descripción estadística del DataFrame: Se utilizó el método "describe()" de Pandas para obtener una descripción estadística del DataFrame, lo que permitió conocer la distribución de los datos y detectar posibles outliers.
-Análisis de los valores únicos de la columna 'cultivo': Se mostró una lista de los valores únicos que se encuentran en la columna 'cultivo' del DataFrame, para conocer todos los diferentes tipos de cultivos que aparecen en esa columna. Esto permitió conocer la variedad de cultivos que se encuentran en los datos agrícolas.
-Frecuencia de los cultivos: Se contó y graficó la frecuencia de los cultivos, lo que muestra cuántas veces aparece cada tipo de cultivo en los datos agrícolas. Esto permitió conocer la distribución de los cultivos en los datos agrícolas y detectar posibles desbalances.
-Cambio de nombre de columnas: Se cambió el nombre de ciertas columnas del DataFrame para que sean más fáciles de manejar. Esto permitió tener una mejor comprensión de los datos y facilitar su manipulación.
-Verificación de duplicados: Se verificó que no haya filas duplicadas en el DataFrame. Esto permitió asegurarse de que los datos sean únicos y evitar posibles errores en el análisis.
-
-Despues en el siguiente archivo en el cual aplicamos machine learning "machineLearning.ipynb".
-En esta sección, explicaremos el emocionante mundo del Machine Learning aplicado a la predicción de producción agrícola. Utilizando avanzadas técnicas de aprendizaje automático, hemos desarrollado modelos de predicción para seis cultivos fundamentales: maíz, trigo, sorgo, avena, soja y girasol. A lo largo de este análisis, examinaremos en detalle cuatro modelos de predicción clave: Naive Bayes, Regresión Lineal, Random Forest Regressor y la Máquina de Soporte Vectorial (SVM). Estos modelos nos proporcionarán valiosas perspectivas y resultados precisos para optimizar la producción agrícola y tomar decisiones informadas en este importante sector. ¡Acompáñanos en este emocionante viaje a través de la aplicación del Machine Learning en la agricultura!
-Importación de librerías necesarias: Se importaron las librerías de Python necesarias para realizar tareas de ciencia de datos y aprendizaje automático, como Pandas, NumPy, Matplotlib, Seaborn y Scikit-learn.
-Análisis de clustering: Se utilizó el algoritmo de clustering KMeans para agrupar los datos y determinar cuántos modelos entrenar. Se aplicó un análisis univariado para quitar outliers con algún método agrupando por cultivo, y un análisis multivariado para calcular la distancia de Mahalanobis.
-Creación del modelo de regresión Naive Bayes: Se creó el modelo de regresión Naive Bayes para predecir la producción de cultivos. Se utilizó el conjunto de datos de entrenamiento para ajustar el modelo y el conjunto de datos de prueba para evaluar su rendimiento.
-Evaluación del modelo: Se evaluó la calidad del modelo de regresión Naive Bayes utilizando las métricas para problemas de regresión, como el error cuadrático medio (MSE), el coeficiente de determinación (R^2) y el error absoluto medio (MAE).
-Creación de otros modelos de regresión: Se crearon otros modelos de regresión, como la regresión lineal, la regresión logística, el árbol de decisión, el random forest y el SVM, para comparar su rendimiento con el modelo de regresión Naive Bayes.
-Selección de características: Se utilizó el método SelectKBest de Scikit-learn para seleccionar las características más importantes para la predicción de la producción de cultivos.
-Evaluación de los modelos con características seleccionadas: Se evaluaron los modelos de regresión creados en el paso 5 utilizando las características seleccionadas en el paso 6.
-Selección del mejor modelo: Se seleccionó el mejor modelo de regresión para la predicción de la producción de cultivos en base a su rendimiento en las métricas evaluadas.
-
-#### *Paralelamente adjuntamos codigos secundarios*
-Creamos un codigo para mostrar que agregando muchas mas variables importantes en el proceso de estudio se puede mejorar el procedimiento utilizando código de Python para el análisis y predicción del rendimiento de cultivos, centrándose en el cultivo de arroz.
-El código comienza por cargar datos de un archivo CSV utilizando la biblioteca Pandas y se filtran las filas del DataFrame para obtener solo las que contienen el cultivo de arroz.
-Se crea un modelo de regresión lineal utilizando la biblioteca Scikit-Learn y se entrena utilizando los datos de arroz seleccionados.
-Se evalúa el rendimiento del modelo calculando el Error Cuadrático Medio (MSE) y el Coeficiente de Determinación (R^2) utilizando las predicciones del modelo en comparación con los valores reales.
-El código realiza pronósticos para futuros valores de rendimiento del cultivo de arroz utilizando valores ficticios para las columnas "sup_sembrada" y "sup_cosechada".
-El código genera datos ficticios para las nuevas columnas: "temperatura_promedio", "precipitación", "humedad_suelo" y "fertilizantes" y se utilizan estas variables para predecir el rendimiento estimado.
-El código incluye una visualización de las predicciones frente a los valores reales.
-
-Hicimos un código con redes neuronales que describe el proceso de entrenar una red neuronal para predecir la producción agrícola en Argentina.
-El estudio utiliza dos características: la superficie sembrada y la superficie cosechada.
-Estas características se normalizan para que tengan una escala similar, lo que ayuda al modelo a aprender de manera más efectiva.
-El modelo de red neuronal consta de capas de entrada, capas densas, capas de normalización por lotes y capas de abandono.
-El modelo se entrena en datos de entrenamiento durante 50 épocas y se evalúa en un conjunto de pruebas para medir su rendimiento en datos no vistos.
-Los resultados del estudio muestran que la red neuronal es capaz de predecir la producción agrícola con un error promedio del 5%.
-Estos resultados sugieren que las redes neuronales pueden ser una herramienta poderosa en la toma de decisiones agrícolas.
-El estudio recomienda continuar mejorando el modelo para mejorar su precisión y confiabilidad.
 
 ### Resultados
 
@@ -118,8 +116,6 @@ El proceso de desarrollo del modelo permitió comprender la importancia de la ca
 La gráfica siguiente muestra la distribución de cultivos en Argentina.
 
 *Insertar gráfico de distribución de cultivos*
-
-## Agradecimientos
 
 ## Referencias
 
